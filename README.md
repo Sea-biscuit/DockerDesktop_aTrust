@@ -51,11 +51,14 @@
 ### 1. 文件清单
 ```text
 .
-├── atrust.deb           # 深信服 aTrust Linux 安装包 (amd64)
-├── Dockerfile           # 定制构建脚本（含防崩溃、语言修复、端口配置）
-├── docker-compose.yml   # 容器编排配置（严格绑定 127.0.0.1 与命名卷）
-├── .dockerignore        # 忽略无关文件以加速构建
-└── README.md            # 本文档
+├── Dockerfile              # 定制构建脚本（含防崩溃、语言修复、端口配置）
+├── docker-compose.yml      # 容器编排配置（严格绑定 127.0.0.1 与命名卷）
+├── atrust.deb              # aTrust安装deb （需自行从 Releases 下载）
+├── .uninstall_EasyConnect/ # 卸载残留 EasyConnect
+│   └── .uninstall_RC.bat   # 清理脚本
+├── .dockerignore           # 忽略无关文件以加速构建
+├── .gitignore              # 忽略无关文件以加速构建
+└── README.md               # 本文档
 ```
 
 ### 2. 暴露端口一览（均仅绑定 `127.0.0.1`）
