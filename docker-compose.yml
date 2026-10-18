@@ -1,0 +1,33 @@
+services:
+  atrust:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: local/atrust:2.5.16.30
+    container_name: atrust-vpn
+    restart: unless-stopped
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    cap_add:
+      - NET_ADMIN
+    sysctls:
+      - net.ipv4.conf.default.route_localnet=1
+    environment:
+      - PASSWORD=123456
+      - URLWIN=1
+      - USE_NOVNC=1
+    volumes:
+      - atrust_root_data:/root
+      - atrust_sangfor_home:/home/sangfor/.aTrust
+      - atrust_share_data:/usr/share/sangfor/.aTrust
+    ports:
+      - "127.0.0.1:5901:5901"      # VNC 客户端端口
+      - "127.0.0.1:28081:8080"     # Web VNC (noVNC) 浏览器访问端口
+      - "127.0.0.1:28888:28888"    # HTTP 代理端口
+      - "127.0.0.1:54631:54631"    # aTrust 宿主机浏览器登录回调端口
+      - "127.0.0.1:21080:21080"    # SOCKS5 代理端口
+
+volumes:
+  atrust_root_data:
+  atrust_sangfor_home:
+  atrust_share_data:

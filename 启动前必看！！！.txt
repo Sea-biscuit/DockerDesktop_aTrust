@@ -1,0 +1,15 @@
+使用本项目部署docker-aTrust前必须先删除EasyConnect，完整卸载的自动bat脚本在.\unstall_EasyConnect目录内
+
+
+先正常走卸载软件流程卸载，再进行如下操作：
+
+进入【普通安全模式】
+	进入安全模式后，如何判断是否进入【普通安全模式】：
+	点开浏览器，进入任意网站，弹出dns错误即可
+	接下来启动.\uninstall_EasyConnect\uninstall_EC.bat
+
+
+编者留：
+由于学校已经弃用EasyConnect，该软件已无使用的必要，由于其SSL证书安装在计算机内，有信息泄漏和意外导致的中间人攻击的风险，据说还会影响运行fps游戏时的性能（本人体验无实感），因此建议卸载
+【【【【！！！！需正常采用EasyConnect自带的uninstall程序卸载后再启动uninstall_EC.bat！！！！】】】】
+
