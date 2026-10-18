@@ -55,7 +55,7 @@
 ├── docker-compose.yml      # 容器编排配置（严格绑定 127.0.0.1 与命名卷）
 ├── atrust.deb              # aTrust安装deb （需自行从 Releases 下载）
 ├── .uninstall_EasyConnect/ # 卸载残留 EasyConnect
-│   └── .uninstall_RC.bat   # 清理脚本
+│   └── .uninstall_EC.bat   # 清理脚本
 ├── .dockerignore           # 忽略无关文件以加速构建
 ├── .gitignore              # 忽略无关文件以加速构建
 └── README.md               # 本文档
